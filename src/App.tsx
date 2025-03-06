@@ -1,11 +1,38 @@
-import { useState } from 'react';
-import { Link } from 'react-scroll';
+import { useState, useEffect } from 'react';
+import { Link, Events } from 'react-scroll';
 import { Menu, X } from 'lucide-react';
 import ImageSlider from './imageSlider';
 
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('introduction');
+
+  useEffect(() => {
+    Events.scrollEvent.register('begin', () => {});
+    Events.scrollEvent.register('end', () => {});
+
+    return () => {
+      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove('end');
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const sidebar = document.getElementById('sidebar');
+      const menuButton = document.getElementById('menu-button');
+      
+      if (isSidebarOpen && sidebar && menuButton && 
+          !sidebar.contains(event.target as Node) && 
+          !menuButton.contains(event.target as Node)) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isSidebarOpen]);
 
   const sections = [
     { id: 'introduction', title: 'Introduction' },
@@ -19,9 +46,18 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 relative">
+      {/* Overlay for mobile */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       {/* Mobile Menu Button */}
       <button
+        id="menu-button"
         className="fixed top-4 right-4 z-50 p-2 rounded-lg bg-eu-yellow text-eu-blue md:hidden"
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
       >
@@ -29,26 +65,32 @@ function App() {
       </button>
 
       {/* Sidebar */}
-      <nav className={`fixed top-0 left-0 h-full bg-eu-blue text-white w-64 transition-transform duration-300 ease-in-out z-40 
-        ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:block overflow-y-auto`}
+      <nav
+        id="sidebar"
+        className={`fixed top-0 left-0 h-full bg-eu-blue text-white w-64 transform transition-transform duration-300 ease-in-out z-40 
+          ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}
       >
-        <div className="p-8 mt-16">
+        <div className="p-6 mt-16 overflow-y-auto h-full pb-24">
           <div className="flex items-center gap-3 mb-8">
             <span className="font-bold text-2xl text-eu-yellow">CONTENTS</span>
           </div>
-          <ul className="space-y-4">
+          <ul className="space-y-2">
             {sections.map((section) => (
-              <li key={section.id} className="flex items-start">
-                <span className="text-eu-yellow mr-2 mt-2.5">•</span>
+              <li key={section.id}>
                 <Link
                   to={section.id}
                   spy={true}
                   smooth={true}
                   duration={500}
                   offset={-100}
-                  className="block py-2 px-4 hover:bg-eu-blue/80 rounded cursor-pointer transition flex-1"
-                  activeClass="bg-eu-blue/80 border-l-4 border-eu-yellow"
-                  onClick={() => setIsSidebarOpen(false)}
+                  className={`block py-2 px-4 hover:bg-eu-blue/80 rounded cursor-pointer transition-all
+                    ${activeSection === section.id ? 'bg-eu-blue/80 border-l-4 border-eu-yellow' : ''}`}
+                  onClick={() => {
+                    setActiveSection(section.id);
+                    if (window.innerWidth < 768) {
+                      setIsSidebarOpen(false);
+                    }
+                  }}
                 >
                   {section.title}
                 </Link>
@@ -58,16 +100,13 @@ function App() {
         </div>
       </nav>
 
-      {/* Main Content */}
       <div className="h-screen overflow-auto flex flex-col md:ml-64 transition-all duration-300 ease-in-out">
-        {/* Centered Header on Desktop */}
-        <header className="sticky top-0 z-30 bg-eu-blue text-white py-6 px-4 shadow-lg mb-8 flex justify-center text-center">
+        <header className="sticky top-0 z-30 bg-eu-blue text-white py-6 shadow-lg flex justify-center text-center">
           <h1 className="text-2xl md:text-3xl font-bold">
             The Function of the European Union: Legislative and Institutional Relations
           </h1>
         </header>
 
-        {/* Page Content */}
         <div className="max-w-4xl mx-auto md:mx-8 space-y-12 p-6">
           <section id="introduction" className="scroll-mt-24">
             <h2 className="text-2xl font-bold text-eu-blue mb-4">Introduction</h2>
