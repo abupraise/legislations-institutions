@@ -109,14 +109,14 @@ function App() {
 
         <div className="max-w-4xl md:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl 3xl:max-w-[90rem] mx-auto md:mx-8 space-y-12 p-6">
         <section id="introduction" className="scroll-mt-24">
-            <h2 className="text-2xl font-bold text-eu-blue m-4">Introduction</h2>
+            <h2 className="text-2xl font-bold text-eu-blue mb-4">Introduction</h2>
             <p className="text-gray-700 leading-relaxed">
               The European Union (EU) is an alliance of political and economic nature with 27 member states in it. It works mainly by promoting financial teamwork, guaranteeing political steadiness, and by putting into action shared policies that help countries under its umbrella. Its role depends considerably on the legislative process, which determines policies and laws affecting over 440 million citizens in the EU.
             </p>
           </section>
 
           <section id="origin" className="scroll-mt-24">
-            <h2 className="text-2xl font-bold text-eu-blue m-4">Origin of the European Union</h2>
+            <h2 className="text-2xl font-bold text-eu-blue mb-4">Origin of the European Union</h2>
             <p className="text-gray-700 leading-relaxed">
               The EU traces its origins to the European Coal and Steel Community (ECSC), which was jointly founded in 1951 by Robert Schuman and Jean Monnet. The ECSC was initially named “Communauté Européenne du Charbon et de l'Acier”.
             </p><p className="text-gray-700 leading-relaxed mt-2">
@@ -125,7 +125,7 @@ function App() {
           </section>
 
           <section id="legislative-role" className="scroll-mt-24">
-            <h2 className="text-2xl font-bold text-eu-blue m-4">The Legislative Role of the EU</h2>
+            <h2 className="text-2xl font-bold text-eu-blue mb-4">The Legislative Role of the EU</h2>
             <p className="text-gray-700 leading-relaxed">
               The EU's lawmaking relies chiefly on three main institutions: the European Commission (EC),
               the European Parliament (EP), and the Council of the European Union.
@@ -157,7 +157,7 @@ function App() {
           </section>
 
           <section id="relations" className="scroll-mt-24">
-            <h2 className="text-2xl font-bold text-eu-blue m-4">Relations with Other EU Institutions</h2>
+            <h2 className="text-2xl font-bold text-eu-blue mb-4">Relations with Other EU Institutions</h2>
             <p className="text-gray-700 leading-relaxed">
               The EU legislative framework is carefully constructed to balance authority among establishments, thus guaranteeing representation of national governments and European people.
               <span className='block mt-2 mb-2'><b>European Council:</b> Sets the political direction of the EU but does not have legislative power.</span>
@@ -168,7 +168,7 @@ function App() {
           </section>
 
           <section id="comparison-ecowas" className="scroll-mt-24">
-            <h2 className="text-2xl font-bold text-eu-blue m-4">Comparison with the ECOWAS Parliament</h2>
+            <h2 className="text-2xl font-bold text-eu-blue mb-4">Comparison with the ECOWAS Parliament</h2>
             <p className="text-gray-700 leading-relaxed">
               Similar to the European Parliament, the Economic Community of West African States (ECOWAS)
               Parliament is also a regional legislative arm to the ECOWAS regions and has its head office in Abuja,
@@ -192,7 +192,7 @@ function App() {
           </section>
 
           <section id="comparison-nigeria" className="scroll-mt-24">
-            <h2 className="text-2xl font-bold text-eu-blue m-4">Comparison with the Nigerian Legislature</h2>
+            <h2 className="text-2xl font-bold text-eu-blue mb-4">Comparison with the Nigerian Legislature</h2>
             <p className="text-gray-700 leading-relaxed">
               The European Parliament also has some likenesses as well as differences with the legislature of Nigeria:
             </p>
@@ -222,7 +222,7 @@ function App() {
           </section>
 
           <section id="responsibilities" className="scroll-mt-24">
-            <h2 className="text-2xl font-bold text-eu-blue m-4">Scope of Responsibilities of the European Parliament in the Legislative Activity</h2>
+            <h2 className="text-2xl font-bold text-eu-blue mb-4">Scope of Responsibilities of the European Parliament in the Legislative Activity</h2>
             <p className="text-gray-700 leading-relaxed">
               The European Parliament plays a crucial role in the legislative process, working alongside the Council to adopt laws.
             </p>
@@ -243,7 +243,7 @@ function App() {
           </section>
 
           <section id="conclusion" className="scroll-mt-24">
-            <h2 className="text-2xl font-bold text-eu-blue m-4">Conclusion</h2>
+            <h2 className="text-2xl font-bold text-eu-blue mb-4">Conclusion</h2>
             <p className="text-gray-700 leading-relaxed">
               In summary, the European Union’s legislative system is complex in the sense that it integrates both national and European governance. While the European Parliament guarantees democratic accountability, the European Commission and Council construct and execute policies.
             </p><p className="text-gray-700 leading-relaxed mt-2">
