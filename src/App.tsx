@@ -9,8 +9,8 @@ function App() {
   const [activeSection, setActiveSection] = useState('introduction');
 
   useEffect(() => {
-    Events.scrollEvent.register('begin', () => {});
-    Events.scrollEvent.register('end', () => {});
+    Events.scrollEvent.register('begin', () => { });
+    Events.scrollEvent.register('end', () => { });
 
     return () => {
       Events.scrollEvent.remove('begin');
@@ -22,10 +22,10 @@ function App() {
     const handleClickOutside = (event: MouseEvent) => {
       const sidebar = document.getElementById('sidebar');
       const menuButton = document.getElementById('menu-button');
-      
-      if (isSidebarOpen && sidebar && menuButton && 
-          !sidebar.contains(event.target as Node) && 
-          !menuButton.contains(event.target as Node)) {
+
+      if (isSidebarOpen && sidebar && menuButton &&
+        !sidebar.contains(event.target as Node) &&
+        !menuButton.contains(event.target as Node)) {
         setIsSidebarOpen(false);
       }
     };
@@ -49,7 +49,7 @@ function App() {
     <div className="min-h-screen bg-gray-50 relative">
       {/* Overlay for mobile */}
       {isSidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
           onClick={() => setIsSidebarOpen(false)}
         />
@@ -101,8 +101,8 @@ function App() {
       </nav>
 
       <div className="h-screen overflow-auto flex flex-col md:ml-64 transition-all duration-300 ease-in-out">
-        <header className="sticky top-0 z-30 bg-eu-blue text-white py-6 shadow-lg flex justify-center text-center">
-          <h1 className="text-2xl md:text-3xl font-bold">
+        <header className="sticky top-0 z-30 bg-eu-blue text-white py-6 shadow-lg flex justify-center md:justify-end lg:justify-center text-center">
+          <h1 className="text-2xl md:text-3xl font-bold md:text-right lg:text-center px-6">
             The Function of the European Union: Legislative and Institutional Relations
           </h1>
         </header>
@@ -194,29 +194,29 @@ function App() {
           <section id="comparison-nigeria" className="scroll-mt-24">
             <h2 className="text-2xl font-bold text-eu-blue mb-4">Comparison with the Nigerian Legislature</h2>
             <p className="text-gray-700 leading-relaxed">
-            The European Parliament also has some likenesses as well as differences with the legislature of Nigeria:
+              The European Parliament also has some likenesses as well as differences with the legislature of Nigeria:
             </p>
             <ul className="list-disc list-outside pl-5 text-gray-700 leading-relaxed space-y-4 mt-4">
 
               <li>
                 <span className="font-bold">Senate of Nigeria:</span>
                 <p className="mt-1">
-                Both the Nigerian Senate and the European Parliament examine policies and laws, but the former works under a regional system as dictated by the Nigerian Constitution.
-                <p className="mt-1">While the Senate looks after the interests of federating states, the European Parliament looks after the citizens of the European Union from different countries.
-                </p><p className='mt-1'>Unlike the European Parliament, who cannot remove the President of the European Commission directly but can only pass a vote of no confidence, the Nigerian Senate has the power to impeach the President and to approve or disapprove of executive office holders.
-                </p>
+                  Both the Nigerian Senate and the European Parliament examine policies and laws, but the former works under a regional system as dictated by the Nigerian Constitution.
+                  <p className="mt-1">While the Senate looks after the interests of federating states, the European Parliament looks after the citizens of the European Union from different countries.
+                  </p><p className='mt-1'>Unlike the European Parliament, who cannot remove the President of the European Commission directly but can only pass a vote of no confidence, the Nigerian Senate has the power to impeach the President and to approve or disapprove of executive office holders.
+                  </p>
                 </p>
               </li>
 
               <li>
                 <span className="font-bold">House of Representatives of Nigeria:</span>
                 <p className="mt-1">
-                Like the European Parliament, the Nigerian House of Representatives is made of elected individuals (politicians) who introduce new laws and are responsible for the changing of laws.
+                  Like the European Parliament, the Nigerian House of Representatives is made of elected individuals (politicians) who introduce new laws and are responsible for the changing of laws.
                 </p>
                 <p className="mt-1">
-                The House of Representatives, however, only champions Nigerian laws, as the European Parliament deals with a number of countries and formulates policies that apply to the whole of the European Union.                </p>
+                  The House of Representatives, however, only champions Nigerian laws, as the European Parliament deals with a number of countries and formulates policies that apply to the whole of the European Union.                </p>
                 <p className="mt-1">
-                Legislative authority in Nigeria is completely centralized, while laws of the EU need the combination of more than one institution, and the cooperation of national governments.                </p>
+                  Legislative authority in Nigeria is completely centralized, while laws of the EU need the combination of more than one institution, and the cooperation of national governments.                </p>
               </li>
             </ul>
           </section>
@@ -224,18 +224,18 @@ function App() {
           <section id="responsibilities" className="scroll-mt-24">
             <h2 className="text-2xl font-bold text-eu-blue mb-4">Scope of Responsibilities of the European Parliament in the Legislative Activity</h2>
             <p className="text-gray-700 leading-relaxed">
-            The European Parliament plays a crucial role in the legislative process, working alongside the Council to adopt laws.
+              The European Parliament plays a crucial role in the legislative process, working alongside the Council to adopt laws.
             </p>
             <ul className="list-disc list-outside pl-5 text-gray-700 leading-relaxed space-y-4 mt-4">
               <li>
                 <p className="mt-1">
-                The European Parliament can make suggestions to change legislation and has the right to veto parts of it in certain areas of policy.                </p>
-                </li>
-                <li>
-                  <p className="mt-1">The Parliament debates policies that affect European citizens, such as climate change regulations, digital rights, and trade agreements.
+                  The European Parliament can make suggestions to change legislation and has the right to veto parts of it in certain areas of policy.                </p>
+              </li>
+              <li>
+                <p className="mt-1">The Parliament debates policies that affect European citizens, such as climate change regulations, digital rights, and trade agreements.
                 </p>
-                </li>
-                <li>
+              </li>
+              <li>
                 <p className='mt-1'>Unlike the European Parliament, who cannot remove the President of the European Commission directly but can only pass a vote of no confidence, the Nigerian Senate has the power to impeach the President and to approve or disapprove of executive office holders.
                 </p>
               </li>
