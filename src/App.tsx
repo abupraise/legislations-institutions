@@ -236,7 +236,7 @@ function App() {
                 </p>
               </li>
               <li>
-                <p className='mt-1'>Unlike the European Parliament, who cannot remove the President of the European Commission directly but can only pass a vote of no confidence, the Nigerian Senate has the power to impeach the President and to approve or disapprove of executive office holders.
+                <p className='mt-1'>It holds the executive to account thus ensuring it is credible in the democratic sense.
                 </p>
               </li>
             </ul>
