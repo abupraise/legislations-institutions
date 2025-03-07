@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 relative">
-      {/* Overlay for mobile */}
+
       {isSidebarOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
@@ -107,8 +107,8 @@ function App() {
           </h1>
         </header>
 
-        <div className="max-w-4xl mx-auto md:mx-8 space-y-12 p-6">
-          <section id="introduction" className="scroll-mt-24">
+        <div className="max-w-4xl md:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl 3xl:max-w-[90rem] mx-auto md:mx-8 space-y-12 p-6">
+        <section id="introduction" className="scroll-mt-24">
             <h2 className="text-2xl font-bold text-eu-blue mb-4">Introduction</h2>
             <p className="text-gray-700 leading-relaxed">
               The European Union (EU) is an alliance of political and economic nature with 27 member states in it. It works mainly by promoting financial teamwork, guaranteeing political steadiness, and by putting into action shared policies that help countries under its umbrella. Its role depends considerably on the legislative process, which determines policies and laws affecting over 440 million citizens in the EU.
@@ -252,7 +252,7 @@ function App() {
           </section>
         </div>
       </div>
-      {/* Right Side Static Image Section */}
+
       <ImageSlider />
     </div>
   );
