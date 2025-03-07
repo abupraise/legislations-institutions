@@ -107,7 +107,7 @@ function App() {
           </h1>
         </header>
 
-        <div className="w-full max-w-4xl md:max-w-5xl xl:max-w-7xl 2xl:max-w-[100rem] 3xl:max-w-[120rem] 4xl:max-w-[140rem] mx-auto md:mx-12 xl:mx-20 2xl:mx-32">
+        <div className="w-full max-w-4xl md:max-w-5xl xl:max-w-7xl 2xl:max-w-[100rem] 3xl:max-w-[120rem] 4xl:max-w-[140rem] mx-auto md:mx-12 xl:mx-20 2xl:mx-32 p-6 md:p-8 xl:p-12">
         <section id="introduction" className="scroll-mt-24">
             <h2 className="text-2xl font-bold text-eu-blue mb-4">Introduction</h2>
             <p className="text-gray-700 leading-relaxed">
