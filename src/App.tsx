@@ -101,8 +101,8 @@ function App() {
       </nav>
 
       <div className="h-screen overflow-auto flex flex-col md:ml-64 transition-all duration-300 ease-in-out">
-        <header className="sticky top-0 z-30 bg-eu-blue text-white py-6 shadow-lg flex justify-center sm:justify-end text-center">
-          <h1 className="text-2xl md:text-3xl font-bold sm:text-right px-6">
+        <header className="sticky top-0 z-30 bg-eu-blue text-white py-6 shadow-lg flex justify-center sm:justify-start text-center">
+          <h1 className="text-2xl md:text-3xl font-bold sm:text-left px-6">
             The Function of the European Union: Legislative and Institutional Relations
           </h1>
         </header>
