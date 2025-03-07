@@ -21,7 +21,7 @@ function ImageSlider() {
   }, [images.length]);
 
   return (
-    <aside className="hidden lg:block fixed top-0 right-0 h-full w-64 bg-white shadow-md">
+    <aside className="hidden md:hidden lg:block fixed top-0 right-0 h-full w-64 bg-white shadow-md">
       <div className="p-4 mt-[39rem]">
         <img
           src={images[currentIndex]}
